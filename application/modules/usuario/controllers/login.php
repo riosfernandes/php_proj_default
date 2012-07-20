@@ -4,7 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Login extends MY_Public_Controller {
+class Login extends MY_Controller_Admin {
 
     var $error;
 

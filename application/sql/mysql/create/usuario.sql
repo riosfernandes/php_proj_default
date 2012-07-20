@@ -1,13 +1,3 @@
-CREATE  TABLE IF NOT EXISTS `situacao` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `descricao` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`) );
-
-CREATE  TABLE IF NOT EXISTS `tipo_usuario` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `descricao` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id`) );
-
 CREATE  TABLE IF NOT EXISTS `usuario` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `nome` VARCHAR(45) NOT NULL ,
@@ -28,11 +18,11 @@ CREATE  TABLE IF NOT EXISTS `usuario` (
   INDEX `fk_usuario_tipo_usuario1` (`tipo_usuario_id` ASC) ,
   CONSTRAINT `fk_usuario_situacao1`
     FOREIGN KEY (`situacao_id` )
-    REFERENCES `gaq`.`situacao` (`id` )
+    REFERENCES `situacao` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_usuario_tipo_usuario1`
     FOREIGN KEY (`tipo_usuario_id` )
-    REFERENCES `gaq`.`tipo_usuario` (`id` )
+    REFERENCES `tipo_usuario` (`id` )
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION)
