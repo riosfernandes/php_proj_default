@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://localhost:8888/php_proj_default/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = md5("Qualquer texto aqui!!!!!");
 
 /*
 |--------------------------------------------------------------------------
@@ -356,6 +356,14 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
+
+function __autoload($class) {
+    if (strpos($class, 'CI_') !== 0) {
+        @include_once( APPPATH . 'core/' . $class . EXT );
+    } else if (strpos($class, '_exception') !== 0) {
+        @include_once( APPPATH . 'controllers/exceptions/' . $class . EXT );
+    }
+}
 
 
 /* End of file config.php */

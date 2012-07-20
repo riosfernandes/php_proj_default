@@ -8,10 +8,9 @@ class MY_Non_Public_Controller extends MY_Controller {
     }   
 
     function isLogado() {
-        $u = TRUE;
-        //@todo: definir logica para verificar se o usuário está logado $u = $this->session->userdata('usuario_logado');
+        $u = $this->session->userdata('usuario_logado');
         if (!$u) {
-            redirect('login');
+            redirect('usuario/login');
         }
     }   
     

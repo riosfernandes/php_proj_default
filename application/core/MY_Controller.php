@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Controller principal que possui functions comuns para todos os outros;
  * OBS> Nâo utilizar nos controllers do applications.
